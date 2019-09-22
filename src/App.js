@@ -1,5 +1,6 @@
 import React from 'react';
 import ListContacts from './ListContacts';
+import FavMovie from './data';
 
 const contacts = [
   {
@@ -25,7 +26,9 @@ const contacts = [
 function App() {
   return (
     <div className="App">
-      <ListContacts contacts={contacts}/>
+      {/* <ListContacts contacts={contacts}/> */}
+      <FavMovie />
+
     </div>
   );
 }
