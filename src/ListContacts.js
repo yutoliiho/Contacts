@@ -5,7 +5,15 @@ class ListContacts extends Component {
         // console.log('Props',this.props)
         return(
             <ol className='contact-list'>
-                Hi, this is ListContacts Component Area
+                <p>Hi, this is ListContacts Component Area</p>
+
+                {this.props.contacts.map((contact)=>(
+                    <li key={contact.id}>
+                        {contact.name}
+                    </li>
+                ))}
+                
+                <p>Hi, this is ListContacts Component Area</p>
             </ol>
         )
     }
