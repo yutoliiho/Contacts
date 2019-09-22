@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// data.js
 const profiles = [
     {
       id: 1,
@@ -88,25 +87,38 @@ const profiles = [
       name: 'Get Out',
     },
   };
-  
-
-class FavMovie extends Component{
+//     class FavMovie extends Component{
+//     render(){
+//         return(
+//             <div>
+//                 {profiles.map((profile)=>{
+//                     const userName = users[profile.userID].name;
+//                     const favMovie = movies[profile.favoriteMovieID].name;
+//                     return(
+//                         <ul key={profile.id}>
+//                             <p>{`${userName}, ${favMovie}`}</p>
+//                         </ul>
+//                     )
+//                 })}
+//             </div>
+//         )
+//     }
+// }
+class MovieCard extends Component{
     render(){
-        return(
+        return(            
             <div>
                 {profiles.map((profile)=>{
-                    const userName = users[profile.userID].name;
+                    // const userName = users[profile.userID].name;
                     const favMovie = movies[profile.favoriteMovieID].name;
+                    const movieName = movies[profile.id].name;
                     return(
                         <ul key={profile.id}>
-                            <p>{`${userName}, ${favMovie}`}</p>
+                            <p>{`${favMovie}`}</p>
                         </ul>
                     )
                 })}
             </div>
-        )
-    }
-}
+            )}}
 
-
-export default FavMovie
+export default MovieCard
