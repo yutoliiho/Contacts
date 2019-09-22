@@ -26,17 +26,6 @@ function App() {
   return (
     <div className="App">
       <ListContacts contacts={contacts}/>
-      {contacts.map((contact)=>{
-        const userName = contact.name;
-        const userHandle = contact.handle;
-        return(
-          <ul key={contact.id}>
-            <p>{`${userName}`}</p>
-            <p>{`${userHandle}`}</p>
-            <br></br>
-          </ul>
-        )
-      })}
     </div>
   );
 }
