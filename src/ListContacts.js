@@ -17,6 +17,15 @@ class ListContacts extends Component {
         }))
     }
     render(){
+        const { query } = this.state
+        const { contacts, onDeleteContact } = this.props
+
+        const showingContacts = query === ''
+        ? contacts
+        : contacts.filter((c) => (
+            c.name.toLowerCase().includes(query.toLowerCase())
+          ))
+
         return(            
           <div className='list-contacts'>
               {JSON.stringify(this.state)}
@@ -25,12 +34,12 @@ class ListContacts extends Component {
                    className='search-contacts'
                    type='text'
                    placeholder='Search Contacts'
-                   value={this.state.query}
+                   value={query}
                    onChange={(event)=>this.updateQuery(event.target.value)}>
                 </input>
             </div>
             <ol className='contact-list'>                
-                {this.props.contacts.map((contact)=>(
+                {showingContacts.map((contact)=>(
                 <li key={contact.id} className='contact-list-item'>
                     <div
                     className='contact-avatar'
@@ -44,7 +53,7 @@ class ListContacts extends Component {
                         <p>{contact.handle}</p>
                     </div>
                     <button
-                        onClick={() => this.onDeleteContact(contact)}
+                        onClick={() => onDeleteContact(contact)}
                         className='contact-remove'>
                         Remove
                     </button>
