@@ -71,6 +71,7 @@ class ListContacts extends Component {
                 </li>
                 ))}
             </ol>
+            
           </div>
         )
     }
